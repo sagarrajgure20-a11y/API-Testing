@@ -1,46 +1,70 @@
 # API Testing
 
-Simple API testing repository using Node.js and Playwright.
+This repository contains a sample local API testing project with a React frontend and two Node.js backend services.
 
 ## Project structure
 
-- `package.json` - npm scripts and dependencies
-- `backend.js` - example backend server
-- `frontend.js` - example frontend server
-- `playwright.config.js` - Playwright test configuration
-- `tests/` - Playwright test files
+- `backend/` - Users API service on `http://localhost:4000`
+- `backend-products/` - Products API service on `http://localhost:4001`
+- `frontend/` - React frontend application
+- `tests/` - Example Playwright tests
+- `playwright.config.js` - Playwright configuration
 
-## Available scripts
+## Prerequisites
 
-- `npm install` — install dependencies
-- `npm run backend` — start backend server on `http://localhost:3000`
-- `npm run frontend` — start frontend server on `http://localhost:3001`
+- Node.js 18+ installed
+- npm available in your shell
 
-## Usage
+## Install dependencies
 
-1. Open the repository folder:
-   ```bash
-   cd "D:\Plawright Folder\API Testing"
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Start the backend server:
-   ```bash
-   npm run backend
-   ```
-4. Start the frontend server in another terminal:
-   ```bash
-   npm run frontend
-   ```
+```bash
+npm install
+npm run install:all
+```
 
-5. Open the frontend in your browser:
-   ```text
-   http://localhost:3001
-   ```
+## Run services
+
+Start the backend users API:
+
+```bash
+npm run backend
+```
+
+Start the frontend application:
+
+```bash
+npm run frontend
+```
+
+Start the products API:
+
+```bash
+npm run backend:products
+```
+
+## Access the app
+
+Open the frontend in your browser:
+
+```text
+http://localhost:5173
+```
+
+## Login credentials
+
+- Email: `admin@acme.test`
+- Password: `admin123`
 
 ## Notes
 
-- The backend server exposes a sample endpoint at `http://localhost:3000/products`
-- If port `3001` is already in use, stop the existing frontend process or change the port in `frontend.js`
+- The frontend makes auth requests to the users API at `http://localhost:4000/api`
+- If the backend is not running, login attempts will fail with a network error
+- The backend includes test-friendly toggles for delays and random failures
+
+## Scripts
+
+- `npm run backend` - start the users API service
+- `npm run backend:users` - same as `backend`
+- `npm run backend:products` - start the products API service
+- `npm run frontend` or `npm run vita` - start the React frontend
+- `npm run install:all` - install dependencies for all packages
