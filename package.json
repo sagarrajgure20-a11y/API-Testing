@@ -9,7 +9,8 @@
   "scripts": {
     "backend": "node backend.js",
     "backend:products": "node backend.js products",
-    "frontend": "node frontend.js"
+    "frontend": "node frontend.js",
+    "start": "npm run backend"
   },
   "dependencies": {
     "playwright": "^1.61.0"
