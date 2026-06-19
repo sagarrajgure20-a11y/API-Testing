@@ -16,3 +16,8 @@ const server = http.createServer((req, res) => {
 
 const port = process.env.PORT || 3001;
 server.listen(port, () => console.log(`Frontend listening on http://localhost:${port}`));
+
+server.on('error', err => {
+  console.error('Frontend server error:', err);
+  process.exit(1);
+});
