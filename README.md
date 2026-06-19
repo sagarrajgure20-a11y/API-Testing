@@ -1,36 +1,46 @@
 # API Testing
 
-This repository contains a simple Playwright-based API testing workspace and two example Node servers for backend and frontend testing.
+Simple API testing repository using Node.js and Playwright.
 
-## Project files
+## Project structure
 
 - `package.json` - npm scripts and dependencies
-- `backend.js` - simple backend HTTP server with `/products`
-- `frontend.js` - simple frontend HTTP server serving a basic HTML page
+- `backend.js` - example backend server
+- `frontend.js` - example frontend server
 - `playwright.config.js` - Playwright test configuration
 - `tests/` - Playwright test files
 
-## Scripts
+## Available scripts
 
-- `npm run backend` — starts the backend server on `http://localhost:3000`
-- `npm run frontend` — starts the frontend server on `http://localhost:3001`
 - `npm install` — install dependencies
+- `npm run backend` — start backend server on `http://localhost:3000`
+- `npm run frontend` — start frontend server on `http://localhost:3001`
 
-## Running locally
+## Usage
 
-```bash
-cd "D:\Plawright Folder\API Testing"
-npm install
-npm run backend
-npm run frontend
-```
+1. Open the repository folder:
+   ```bash
+   cd "D:\Plawright Folder\API Testing"
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the backend server:
+   ```bash
+   npm run backend
+   ```
+4. Start the frontend server in another terminal:
+   ```bash
+   npm run frontend
+   ```
 
-Then visit `http://localhost:3001` in your browser.
+5. Open the frontend in your browser:
+   ```text
+   http://localhost:3001
+   ```
 
 ## Notes
 
-The backend server exposes a sample JSON endpoint:
-
-- `http://localhost:3000/products`
-
-The frontend server is a simple static page with a link to the backend endpoint.
+- The backend server exposes a sample endpoint at `http://localhost:3000/products`
+- If port `3001` is already in use, stop the existing frontend process or change the port in `frontend.js`
