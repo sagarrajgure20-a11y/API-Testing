@@ -7,10 +7,13 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "backend": "node backend.js",
-    "backend:products": "node backend.js products",
-    "frontend": "node frontend.js",
-    "start": "npm run backend"
+    "postinstall": "node scripts/install-all.js",
+    "backend": "npm --prefix backend run dev",
+    "backend:users": "npm --prefix backend run dev",
+    "backend:products": "npm --prefix backend-products run dev",
+    "frontend": "npm --prefix frontend run dev",
+    "install:all": "npm install",
+    "install:packages": "node scripts/install-all.js"
   },
   "dependencies": {
     "playwright": "^1.61.0"
