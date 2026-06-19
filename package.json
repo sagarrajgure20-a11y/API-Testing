@@ -12,6 +12,7 @@
     "backend:users": "npm --prefix backend run dev",
     "backend:products": "npm --prefix backend-products run dev",
     "frontend": "npm --prefix frontend run dev",
+    "vita": "npm --prefix frontend run dev",
     "install:all": "npm install",
     "install:packages": "node scripts/install-all.js"
   },
