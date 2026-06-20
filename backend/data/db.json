@@ -1,6 +1,26 @@
 {
   "users": [
     {
+      "id": "c770871e-a9b6-45a6-8d4e-825ad6f07d4e",
+      "firstName": "123",
+      "lastName": "Core",
+      "email": "test.user.123@example.test",
+      "phone": "9876543210",
+      "role": "QA",
+      "status": "Active",
+      "createdAt": "2026-06-20T18:55:02.296Z"
+    },
+    {
+      "id": "d8f3da08-f243-41fb-b71d-eecdf7643496",
+      "firstName": "123ABC",
+      "lastName": "Core",
+      "email": "test.user.test@example.test",
+      "phone": "1000000000",
+      "role": "QA",
+      "status": "Active",
+      "createdAt": "2026-06-20T16:50:26.884Z"
+    },
+    {
       "id": "eec01e19-0d51-4ecb-a727-8bebad9504a9",
       "firstName": "Isha",
       "lastName": "Patel",
