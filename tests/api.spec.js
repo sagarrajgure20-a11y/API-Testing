@@ -15,29 +15,29 @@ test.beforeEach(async({request}) =>{
    expect(await authResponse.status()).toBe(200);
    const jsonBody = await authResponse.json();
    console.log(jsonBody);
-   token = jsonBody.data.token;
+   token = await jsonBody.data.token;
    console.log(token);
 });
 
 // Login Process
 
-// test("API Testing - Login process", async({request}) =>{
-//    let authURL = "http://localhost:4000/api/auth/login"
-//    let authResponse = await request.post(authURL, 
-//     {
-//         data:{
-//                 "email": "admin@acme.test",
-//                 "password": "admin123"
-//             }
+test("API Testing - Login process", async({request}) =>{
+   let authURL = "http://localhost:4000/api/auth/login"
+   let authResponse = await request.post(authURL, 
+    {
+        data:{
+                "email": "admin@acme.test",
+                "password": "admin123"
+            }
         
-//     }
-//    )
-//    expect(authResponse.status()).toBe(200);
-//    const jsonBody = await authResponse.json();
-//    console.log(jsonBody);
-//    let token = await jsonBody.data.token;
-//    console.log(token);
-// });
+    }
+   )
+   expect(authResponse.status()).toBe(200);
+   const jsonBody = await authResponse.json();
+   console.log(jsonBody);
+   let token = await jsonBody.data.token;
+   console.log(token);
+});
 
 // create user
 
@@ -46,19 +46,19 @@ test("API Testing - Create User", async({request}) =>{
    const userResponse = await request.post(createUserEndpoint, 
     {
         headers: {
-            "Authorization":`Bearer ${token}`
+            "Authorization":`Bearer ${token}`,
         },
         data:{
-               "firstName": "123ABCDEFGH",
+               "firstName": "TestQAManual",
                "lastName": "Core",
-               "email": "test.testingQA1@example.test",
+               "email": "TestQAManual@example.test",
                "phone": "1000025896",
                "role": "Quality Analyst",
                "status": "Active"
             }
-    }
-   )
-      expect(await userResponse.status()).toBe(201);
+    });
+
+      expect(userResponse.status()).toBe(201);
       const userjsonBody = await userResponse.json();
       console.log(userjsonBody);
 });
