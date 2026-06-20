@@ -12,7 +12,7 @@ test.beforeEach(async({request}) =>{
         
     }
    )
-   expect(authResponse.status()).toBe(200);
+   expect(await authResponse.status()).toBe(200);
    const jsonBody = await authResponse.json();
    console.log(jsonBody);
    token = jsonBody.data.token;
@@ -51,14 +51,14 @@ test("API Testing - Create User", async({request}) =>{
         data:{
                "firstName": "123ABCDEFGH",
                "lastName": "Core",
-               "email": "test.testingQA@example.test",
+               "email": "test.testingQA1@example.test",
                "phone": "1000025896",
                "role": "Quality Analyst",
                "status": "Active"
             }
     }
    )
-      expect(userResponse.status()).toBe(201);
+      expect(await userResponse.status()).toBe(201);
       const userjsonBody = await userResponse.json();
       console.log(userjsonBody);
 });
