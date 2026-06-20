@@ -1,6 +1,36 @@
 {
   "users": [
     {
+      "id": "1ddbb9f6-82b6-432c-9aab-693f6cd9058e",
+      "firstName": "NANO",
+      "lastName": "Dil",
+      "email": "testmanualqa@example.test",
+      "phone": "2054855458",
+      "role": "QA",
+      "status": "Active",
+      "createdAt": "2026-06-20T20:05:17.528Z"
+    },
+    {
+      "id": "039b2575-3eea-4dce-b053-7475b03c17ad",
+      "firstName": "ABCTAkshayTensionest",
+      "lastName": "test",
+      "email": "test12manual@example.test",
+      "phone": "2054855458",
+      "role": "Analyst",
+      "status": "Active",
+      "createdAt": "2026-06-20T20:01:38.633Z"
+    },
+    {
+      "id": "b0e962ca-9e1a-4e3e-8b99-45d206d64912",
+      "firstName": "TestQAManual",
+      "lastName": "Core",
+      "email": "testqamanual@example.test",
+      "phone": "1000025896",
+      "role": "Analyst",
+      "status": "Active",
+      "createdAt": "2026-06-20T19:35:16.798Z"
+    },
+    {
       "id": "c770871e-a9b6-45a6-8d4e-825ad6f07d4e",
       "firstName": "123",
       "lastName": "Core",
