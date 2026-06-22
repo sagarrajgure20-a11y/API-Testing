@@ -15,10 +15,10 @@ Feature: Login functionality for saucedemo application.
         When user enter "<Username>" in "Username" textbox
         And user enter "<Password>" in "Password" textbox
         And user click on login button
-        Then user validate error message "<Errormsg>"
+        Then user validate error message "<errormsg>"
 
     Example:
-            | Username      | Password     | Errormsg                                                                  |
+            | Username      | Password     | errormsg                                                                  |
             |               | secret_sauce | Epic sadface: Username is required                                        |
             | standard_user |              | Epic sadface: Password is required                                        |
             | asdsd         | sfsafdf      | Epic sadface: Username and password do not match any user in this service |

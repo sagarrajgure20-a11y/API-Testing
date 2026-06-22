@@ -13,14 +13,14 @@ Given("user navigate to {string}", async function(url){
 
 When("user enter {string} in {string} textbox", async function(data, dataBox){
     if (dataBox === "Username"){
-        await page.locator("[id='user-name']").fill(data);
+        await page.locator("#user-name").fill(data);
     } else if (dataBox === "Password"){
-        await page.locator("[id='password']").fill(data)
+        await page.locator("#password").fill(data)
     }
 });
 
 When("user click on login button", async function(){
-    await page.locator("[id='login-button']").click();
+    await page.locator("#login-button").click();
 });
 
 Then("user validate error message {string}", async function(errormsg){
