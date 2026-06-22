@@ -8,8 +8,8 @@ user open url "https://www.amazon.com/"
 user enter "shoes" inside searchbox
 user click on first suggested item
 
-Rules :
-Feature file
+Rules 1:
+   Create Feature file
 
 Given = Prereq
 When = action

@@ -49,6 +49,7 @@ test.only("checking window 1", async({page})=>{
     await expect(image).toBeVisible();
     await image.scrollIntoViewIfNeeded();
     await image.click({ button: 'right', timeout: 5000 });
+    
     await page.mouse.move(100,200);                   // Mouse Move to specific location
     // page.locator("").hover();                   // To hover the curser
     // page.locator("").click();                   // Single click
