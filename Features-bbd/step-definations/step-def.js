@@ -33,7 +33,7 @@ Then("user validate error message {string}", async function(errormsg){
 });
 
 Then("user validate dashboard", async function(){
-    await expect(page).toHaveURL(/\/inventory\.html$/);
+    await expect(page).toHaveURL("https://www.saucedemo.com/inventory.html");
 });
 
 After(async function() {
