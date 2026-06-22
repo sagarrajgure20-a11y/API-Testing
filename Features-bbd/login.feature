@@ -1,46 +1,48 @@
 
 
-Feature: Login functionality for amazon application.
+Feature: Login functionality for saucedemo application.
 
     Background:
-        Given user navigate to "http://www.amazon.com"
+        Given user navigate to "https://www.saucedemo.com"
 
     Scenario: user able to login succesfully.
-        When user enter "username1" in "useraname" textbox
-        And user enter "password1" in "password" textbox
+        When user enter "standard_user" in "Useraname" textbox
+        And user enter "secret_sauce" in "Password" textbox
         And user click on login button
+        Then user validate error message
         Then user validate dashboard
 
-        Scenario Outline: Verify error message for execution
-        When user enter "<username>" in "useraname" textbox
-        And user enter "<password>" in "password" textbox
+    Scenario Outline: Verify error message for execution
+        When user enter "<Username>" in "Useraname" textbox
+        And user enter "<Password>" in "Password" textbox
         And user click on login button
-        Then user validate error message "<errormsg>"
+        Then user validate error message "<Errormsg>"
 
     Example:
-            | useraname | password  | errormsg                         |
-            |           | password1 | Please Provide useraname         |
-            | username1 |           | Please Provide password          |
-            | asdsd     | sfsafdf   | Please Provide Valid Credentials |
+            | Useraname     | Password     | Errormsg                                                                  |
+            |               | secret_sauce | Epic sadface: Username is required                                        |
+            | standard_user |              | Epic sadface: Password is required                                        |
+            | asdsd         | sfsafdf      | Epic sadface: Username and password do not match any user in this service |
+            | standard_user | secret_sauce |                                                                           |
 
-    # Scenario: user verify error message when user provide empty username.
-    #     When user enter "" in "useraname" textbox
-    #     And user enter "password1" in "password" textbox
-    #     And user click on login button
-    #     Then user validate error message "Please Provide Username"
-
-
-    # Scenario: user verify error message when user provide empty password.
-    #     When user enter "username1" in "useraname" textbox
-    #     And user enter "" in "password" textbox
-    #     And user click on login button
-    #     Then user validate error message "Please Provide Password"
+# Scenario: user verify error message when user provide empty username.
+#     When user enter "" in "useraname" textbox
+#     And user enter "password1" in "password" textbox
+#     And user click on login button
+#     Then user validate error message "Please Provide Username"
 
 
-    # Scenario: user verify error message when user provide wrong credentials.
-    #     When user enter "fgdf" in "useraname" textbox
-    #     And user enter "fgdfgfd" in "password" textbox
-    #     And user click on login button
-    #     Then user validate error message ""Please Provide Valid Credentials"
+# Scenario: user verify error message when user provide empty password.
+#     When user enter "username1" in "useraname" textbox
+#     And user enter "" in "password" textbox
+#     And user click on login button
+#     Then user validate error message "Please Provide Password"
+
+
+# Scenario: user verify error message when user provide wrong credentials.
+#     When user enter "fgdf" in "useraname" textbox
+#     And user enter "fgdfgfd" in "password" textbox
+#     And user click on login button
+#     Then user validate error message ""Please Provide Valid Credentials"
 
 
