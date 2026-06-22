@@ -1,12 +1,12 @@
 import {test, expect} from "@playwright/test"
 
 test.beforeEach(async({page})=>{
-    await page.goto("file:///D:/Application%20Testing%202/html/html/test1.html");
+    await page.goto("file:///D:/Plawright%20Folder/API%20Testing/html/html/test1.html");
 })
 
 test("Verify the Tital, URL and Heading of the page - @smoke", async({page})=>{
     await expect(page).toHaveTitle("Registration Form");
-    await expect(page).toHaveURL("file:///D:/Application%20Testing%202/html/html/test1.html");
+    await expect(page).toHaveURL("file:///D:/Plawright%20Folder/API%20Testing/html/html/test1.html");
     await expect(page.locator("h1")).toHaveText("User Registration Form");
 });
 
@@ -38,4 +38,18 @@ test("Check the data from the table - @smoke", async({page})=>{
     let Occupation = await page.locator("table").locator("tr").filter({hasText:"Emma"}).locator("td").nth(2).textContent();
     await expect (Occupation).toBe("Doctor");
     await page.screenshot({ path: 'screenshots/test-result.png', fullPage: true });
+})
+
+test.only("checking window 1", async({page})=>{
+    const user = page.getByPlaceholder("Enter Username");  // Double click 
+    await user.dblclick();
+    await user.fill("Sagar Rajgure")
+             
+    const image = page.getByAltText("Sample Image");  // Right click
+    await expect(image).toBeVisible();
+    await image.scrollIntoViewIfNeeded();
+    await image.click({ button: 'right', timeout: 5000 });
+    await page.mouse.move(100,200);                   // Mouse Move to specific location
+    // page.locator("").hover();                   // To hover the curser
+    // page.locator("").click();                   // Single click
 })
