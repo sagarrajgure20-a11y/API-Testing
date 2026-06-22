@@ -1,9 +1,9 @@
 
 
-Feature: Login functionality forabcd application.
+Feature: Login functionality for amazon application.
 
     Background:
-        Given user navigate to "http://www/amazon.com"
+        Given user navigate to "http://www.amazon.com"
 
     Scenario: user able to login succesfully.
         When user enter "username1" in "useraname" textbox
