@@ -17,6 +17,8 @@
     "install:packages": "node scripts/install-all.cjs"
   },
   "dependencies": {
+    "@cucumber/cucumber": "^13.0.0",
+    "cucumber-js": "^1.0.0",
     "dotenv": "^17.4.2",
     "playwright": "^1.61.0"
   },

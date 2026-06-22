@@ -11,11 +11,12 @@ user click on first suggested item
 Rules 1:
    Create Feature file
 
-Given = Prereq
+Given = Prerequisite
 When = action
 Then = Validation
+and = when any keyword use repeatedly then we use and inplace of that kayword.
+"" = Represent "testdata"
 
-"" = Represent test data
 step defination layer
 
 cucumber-js library
