@@ -52,4 +52,10 @@ test.only("checking window 1", async({page})=>{
     await page.mouse.move(100,200);                   // Mouse Move to specific location
     // page.locator("").hover();                   // To hover the curser
     // page.locator("").click();                   // Single click
+
+    // To add javascript inside a browser
+
+    page.evaluate(() => {
+              document.getElementById('').value = '';
+    });
 })
