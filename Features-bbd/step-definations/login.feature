@@ -6,20 +6,19 @@ Feature: Login functionality for saucedemo application.
         Given user navigate to "https://www.saucedemo.com"
 
     Scenario: user able to login succesfully.
-        When user enter "standard_user" in "Useraname" textbox
+        When user enter "standard_user" in "Username" textbox
         And user enter "secret_sauce" in "Password" textbox
         And user click on login button
-        Then user validate error message
         Then user validate dashboard
 
     Scenario Outline: Verify error message for execution
-        When user enter "<Username>" in "Useraname" textbox
+        When user enter "<Username>" in "Username" textbox
         And user enter "<Password>" in "Password" textbox
         And user click on login button
         Then user validate error message "<Errormsg>"
 
     Example:
-            | Useraname     | Password     | Errormsg                                                                  |
+            | Username      | Password     | Errormsg                                                                  |
             |               | secret_sauce | Epic sadface: Username is required                                        |
             | standard_user |              | Epic sadface: Password is required                                        |
             | asdsd         | sfsafdf      | Epic sadface: Username and password do not match any user in this service |
