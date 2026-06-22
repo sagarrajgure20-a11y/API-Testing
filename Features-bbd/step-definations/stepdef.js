@@ -1,4 +1,4 @@
-import { Given, When, Then, And } from "@cucumber/cucumber";
+import { Given, When, Then } from "@cucumber/cucumber";
 import { chromium } from "playwright";
 
 let browser;
@@ -11,9 +11,31 @@ Given("user navigate to {string}", async function (url){
 });
 
 When("user enter {string} in {string} textbox", async function (data, dataBox){
-    await page.locator("username").fill("");
-    console.log("")
+    await 
+
 });
+
+
+//     const field = (dataBox || "").toLowerCase();
+//     // basic selector mapping — adjust to your app's real selectors
+//     const selector = field.includes("user")
+//         ? 'input[name="username"], input#username, input[name="useraname"]'
+//         : 'input[name="password"], input#password';
+//     await page.fill(selector, data);
+// });
+
+// When("user click on login button", async function (){
+//     await page.click('button[type="submit"], button#login, input[type="submit"]');
+// });
+
+// Then("user validate dashboard", async function (){
+//     // crude validation: wait a bit — replace with real checks
+//     await page.waitForTimeout(1000);
+// });
+
+// After(async function (){
+//     if (browser) await browser.close();
+// });
 
 // When("user enter {string} in {string} textbox", async function(){
 
