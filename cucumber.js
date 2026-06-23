@@ -1,18 +1,7 @@
-import { format } from "node:path";
-
-module.exports = {
-    default: {
-        require:['Features-bbd/step-definations/*.js'],
-        format: ['progress', 'html:reports/cucumber-report.html']
-    }
-}
-
-
-// export default {
-//    default: {
-//     require: ["Features-bbd/step-definations/**/*.js"],
-//     paths: ["Features-bbd/**/*.feature"],
-//     format: ["progress"],
-//     publishQuiet: true,
-//   },
-// };
+export default {
+  default: {
+    require: ['Features-bbd/step-definations/*.js'],
+    path: ['Features-bbd/*.feature'],
+    format: ['progress', 'html:reports/cucumber-report.html'],
+  },
+};
