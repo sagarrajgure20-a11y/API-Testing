@@ -13,6 +13,7 @@
     "backend:products": "npm --prefix backend-products run dev",
     "frontend": "npm --prefix frontend run dev",
     "vita": "npm --prefix frontend run dev",
+    "bdd": "cucumber-js",
     "install:all": "npm install",
     "install:packages": "node scripts/install-all.cjs"
   },

@@ -12,6 +12,8 @@ Given("user navigate to {string}", async function(url){
 });
 
 When("user enter {string} in {string} textbox", async function(data, dataBox){
+    // await this.page.getByLabel(dataBox).fill(data);
+    // console.log("");
     if (dataBox === "Username"){
         await page.locator("#user-name").fill(data);
     } else if (dataBox === "Password"){
