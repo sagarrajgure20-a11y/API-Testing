@@ -7,6 +7,6 @@ Before(async function(){
 })
 
 After(async function (){
-    await this.browser.close();
-    await this.page.close();
+    if (this.page) await this.page.close();
+    if (this.browser) await this.browser.close();
 })

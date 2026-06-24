@@ -4,13 +4,13 @@ Feature: Login functionality for saucedemo application.
 
     Background:
         Given user navigate to "https://www.saucedemo.com"
-
+    @smoke
     Scenario: user able to login succesfully.
         When user enter "standard_user" in "Username" textbox
         And user enter "secret_sauce" in "Password" textbox
         And user click on login button
         Then user validate dashboard
-
+    @sanity
     Scenario Outline: Verify error message for execution
         When user enter "<Username>" in "Username" textbox
         And user enter "<Password>" in "Password" textbox

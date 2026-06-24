@@ -1,5 +1,4 @@
 import { After, Given, Then, When } from "@cucumber/cucumber";
-import { TIMEOUT } from "node:dns";
 import { chromium } from "playwright";
 import { expect } from "playwright/test";
 
@@ -19,14 +18,16 @@ When("user enter {string} in {string} textbox", async function(data, dataBox){
 
 When("user click on login button", async function(){
     await this.page.locator("#login-button").click();
+    await this.page.waitForLoadState('networkidle', {timeout: 15000}).catch(() => {});
 });
 
 Then("user validate error message {string}", async function(errormsg){
     const errorLocator = this.page.locator("[data-test='error']");
     if (!errormsg) {
-        await expect(errorLocator).not.toBeVisible();
+        await expect(errorLocator).toBeHidden({timeout: 5000});
     } else {
-        await expect(errorLocator).toHaveText(errormsg, {timeout: 200000});
+        await expect(errorLocator).toBeVisible({timeout: 5000});
+        await expect(errorLocator).toHaveText(errormsg, {timeout: 5000});
     }
 });
 
