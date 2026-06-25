@@ -25,7 +25,7 @@ test("Select option from the dropdown - @smoke", async({page})=>{
 })
 
 test("Open Dashboard - @smoke", async({page})=>{
-    await page.goto("https://www.google.com/dashboard")
+    await page.goto("https://www.google.com/dashboard", {timeout: 50000})
 })
 
 test("Entering text in the search texbox which is present in the frame - @smoke", async({page})=>{
@@ -40,23 +40,23 @@ test("Check the data from the table - @smoke", async({page})=>{
     await page.screenshot({ path: 'screenshots/test-result.png', fullPage: true });
 })
 
-test.only("checking window 1", async({page})=>{
-    const user = page.getByPlaceholder("Enter Username");  // Double click 
-    await user.dblclick();
-    await user.fill("Sagar Rajgure")
+// test.only("checking window 1", async({page})=>{
+//     const user = page.getByPlaceholder("Enter Username");  // Double click 
+//     await user.dblclick();
+//     await user.fill("Sagar Rajgure")
              
-    const image = page.getByAltText("Sample Image");  // Right click
-    await expect(image).toBeVisible();
-    await image.scrollIntoViewIfNeeded();
-    await image.click({ button: 'right', timeout: 5000 });
+//     const image = page.getByAltText("Sample Image");  // Right click
+//     await expect(image).toBeVisible();
+//     await image.scrollIntoViewIfNeeded();
+//     await image.click({ button: 'right', timeout: 5000 });
     
-    await page.mouse.move(100,200);                   // Mouse Move to specific location
-    // page.locator("").hover();                   // To hover the curser
-    // page.locator("").click();                   // Single click
+//     await page.mouse.move(100,200);                   // Mouse Move to specific location
+//     // page.locator("").hover();                   // To hover the curser
+//     // page.locator("").click();                   // Single click
 
-    // To add javascript inside a browser
+//     // To add javascript inside a browser
 
-    page.evaluate(() => {
-              document.getElementById('').value = '';
-    });
-})
+//     page.evaluate(() => {
+//               document.getElementById('').value = '';
+//     });
+// })
