@@ -1,3 +1,4 @@
 
 let a:number = 10;
-a = "sagar";
+a = 20;
+console.log(a);
